@@ -1,0 +1,10 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        res = ""
+        rev = ""
+        spells = "abcdefghijklmnopqrstuvwxyz"
+        for spell in s: 
+            if spell.isalnum():
+                res += spell.lower()
+                rev = spell.lower() + rev
+        return res == rev
