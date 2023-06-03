@@ -1,0 +1,15 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        cont_lst = Counter(s)
+        set_cont = list(cont_lst.keys())
+        for i in range(len(set_cont)):
+            for j in range(i + 1, len(set_cont)):
+                if cont_lst[set_cont[j]] > cont_lst[set_cont[i]]:
+                    set_cont[j], set_cont[i] = set_cont[i], set_cont[j]
+
+        res = ""
+        for spell in set_cont:
+            res += spell * cont_lst[spell]
+        return res
+        
+        
